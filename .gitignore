@@ -1,0 +1,80 @@
+
+# List of directories whose contents do not need to sync on Github
+/data/CMIP5_projections/**
+datos.zip
+resultados.zip
+/Frank_scenario/**
+/data/Historical_Datos-de-Entrada/**
+/data/CMIP6/**
+!data/CMIP6/.gitkeep
+
+# Scripts
+/scripts/check_gr2m_CST.py
+/scripts/comparison_flow_CST_with_SimObs.py
+/scripts/map_CST_results.py
+/scripts/Map_Demand_Scenarios.py
+/scripts/Plot_CRF_Map_streamflow.py
+/scripts/plot_meta_hydroclimatology.py
+/scripts/Plot_IrrReq_CST.py
+/scripts/plot_OWF_output_timeseries.py
+/scripts/ORINOQUIA_aquacrop_CST_NetIrrSMT80.py
+/scripts/ORINOQUIA_aquacrop_Historical_NetIrrSMT80.py
+/scripts/comparison_flow_CST_with_SimObs.py
+/scripts/ORINOQUIA_aquacrop.py
+/scripts/environmental_flow_calculation_historical.py
+/scripts/pywr_OWF_historical.py
+/scripts/*.lp
+/scripts/*.mps
+/scripts/run_OWF_CST_unity*
+/scripts/logs/**
+
+# Input files
+/input/weather/CST/**
+/input/weather/historical/**
+/input/streamflow/CST/**
+/input/streamflow/historical/**
+
+/input/irrigation/CST/OilPalm/*.csv
+/input/irrigation/CST/Aquacrop/Rice_Default/**
+/input/irrigation/CST/Aquacrop/Rice_Paddy/**
+/input/irrigation/CST/Aquacrop/Rice_Sand/**
+/input/irrigation/CST/Aquacrop/Rice/*.csv
+/input/irrigation/historical/** 
+
+
+
+# Figures 
+/figures/*.png
+!/figures/OWF_readme_screenshot/*.png
+
+# Shapefiles
+/data/shapefiles/**
+!/data/shapefiles/cuencas_completas.cpg
+!/data/shapefiles/cuencas_completas.dbf
+!/data/shapefiles/cuencas_completas.prj
+!/data/shapefiles/cuencas_completas.qmd
+!/data/shapefiles/cuencas_completas.shp
+!/data/shapefiles/cuencas_completas.shx
+
+# Unity / github token
+unity-token.txt
+
+# Output of the OFM model
+/results/CST/*.csv
+/results/CST/OWF_CST_annual_deficit_Mm3.nc
+/results/Performance_Metrics/Frequency_of_rationing.csv
+/results/Performance_Metrics/Frequency_of_rationing.pkl
+
+# json files of the models created for the CST
+/model_json/CST/models/*.json
+
+# Scripts
+/scripts/test_download_CMIP6_projections.py
+
+# Drafts of the report
+/report/**
+!/report/D4_FINAL_II_ORINOQUIA_March 22 2024.*
+*.lp
+# cache file
+*.pyc
+

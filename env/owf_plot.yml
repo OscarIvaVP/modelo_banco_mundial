@@ -1,0 +1,23 @@
+name: owf_plot
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - numpy=1.26.4
+  - pandas=2.2.1
+  - matplotlib=3.8.4
+  - scipy=1.13.0
+  - netCDF4=1.6.5
+  - pynhd=0.16.3
+  - rioxarray
+  - scikit-learn
+  - seaborn=0.13.2
+  - plotly=6.0.0
+  - pip
+  - dash
+  - openpyxl=3.1.5
+
+
+
+

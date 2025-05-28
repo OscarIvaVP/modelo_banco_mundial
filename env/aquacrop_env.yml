@@ -1,0 +1,11 @@
+name: aquacrop_env
+channels:
+  - https://repo.anaconda.com/pkgs/free
+  - conda-forge
+  - defaults
+dependencies:
+  - python==3.9
+  - pip
+  - pip:
+    - aquacrop==3.0.10
+

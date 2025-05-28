@@ -1,0 +1,3 @@
+- "Projection_Urban_and_Rural_Population_for_OFM_CST.csv" file was generated via the script "Trend_Urban_and_Rural_Population_for_OFM_CST.py" python script.
+- Annual values from 2020 through 2035 are from the DANE projections.
+- Annaul values from 2036 through 2050 are obtained using a linear regression extrapolating the DANE projections.

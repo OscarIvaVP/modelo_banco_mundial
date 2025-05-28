@@ -1,0 +1,2715 @@
+{ 
+   "metadata": {
+    "title": "OWF",
+    "description": "Orinoquia Water Futures model",
+    "minimum_version": "1.17.2"
+  },
+   "timestepper": {
+    "start": "2020-01-01",
+    "end": "2070-12-31",
+    "timestep": "1M"
+  },
+   "includes": [
+      "../Parent/delivery_and_demand_outputs.json"
+  ],
+  "nodes": [      
+    {
+      "name": "metica_catchment",
+      "type": "catchment",
+      "flow": "flow_metica"
+    },
+    {
+      "name": "guayuriba_catchment",
+      "type": "catchment",
+      "flow": "flow_guayuriba"
+    },
+    {
+      "name": "negro_catchment",
+      "type": "catchment",
+      "flow": "flow_negro"
+    },
+    {
+      "name": "guatiquia_catchment",
+      "type": "catchment",
+      "flow": "flow_guatiquia"
+    },
+    {
+      "name": "guacavia_catchment",
+      "type": "catchment",
+      "flow": "flow_guacavia"
+    },
+    {
+      "name": "humea_catchment",
+      "type": "catchment",
+      "flow": "flow_humea"
+    },
+    {
+      "name": "dir_btw_hu_up_catchment",
+      "comment": "directos between Humea and Upia",
+      "type": "catchment",
+      "flow": "flow_dir_btw_hu_up"
+    },
+    {
+      "name": "guavio_catchment",
+      "comment": "94.5% of the simulated flow by GR2m",
+      "type": "catchment",
+      "flow": {
+        "type": "aggregated",
+        "agg_func": "product",
+        "parameters": [
+            "flow_guavio",
+            0.945
+            ]
+        }
+    },
+    {
+      "name": "garagoa_catchment",
+      "type": "catchment",
+      "flow": "flow_garagoa"
+    },
+    {
+      "name": "lengupa_catchment",
+      "type": "catchment",
+      "flow": "flow_lengupa"
+    },
+    {
+      "name": "dir_btw_gudam_up_catchment",
+      "comment": "directos between Guavio dam and Upia - 5.5% of the simulated GR2m flow",
+      "type": "discharge",
+      "flow": {
+        "type": "aggregated",
+        "agg_func": "product",
+        "parameters": [
+            "flow_guavio",
+            0.055
+            ]
+        }
+    },
+    {
+      "name": "lago_de_tota_catchment",
+      "type": "catchment",
+      "flow": "flow_lago_de_tota"
+    },
+    {
+      "name": "upia_catchment",
+      "type": "discharge",
+      "flow": "flow_upia"
+    },
+    {
+      "name": "dir_btw_gb_yu_catchment",
+      "comment": "the area along Metica river in-between guayuriba and yucao",
+      "type": "discharge",
+      "flow": "flow_dir_btw_gb_yu"
+    },
+    {
+      "name": "yucao_catchment",
+      "type": "catchment",
+      "flow": "flow_yucao"
+    },
+    {
+      "name": "manacacias_catchment",
+      "type": "discharge",
+      "flow": "flow_manacacias"
+    },
+    {
+      "name": "cumaral_catchment",
+      "type": "catchment",
+      "flow":"flow_cumaral"
+    },
+    {
+      "name": "melua_catchment",
+      "type": "catchment",
+      "flow": "flow_melua"
+    },    
+    {
+      "name": "tua_catchment",
+      "type": "catchment",
+      "flow": "flow_tua"
+    },
+    {
+      "name": "cusiana_catchment",
+      "type": "catchment",
+      "flow": "flow_cusiana"
+    },
+    {
+      "name": "dir_btw_cu_cs_catchment",
+      "comment": "the area in-between cusiana and cravo sur",
+      "type": "catchment",
+      "flow": "flow_dir_btw_cu_cs"
+    },
+    {
+      "name": "cravo_sur_catchment",
+      "type": "catchment",
+      "flow": "flow_cravo_sur"
+    },
+    {
+      "name": "guanapalo_catchment",
+      "type": "catchment",
+      "flow": "flow_guanapalo"
+    },
+    {
+      "name": "pauto_catchment",
+      "type": "catchment",
+      "flow": "flow_pauto"
+    },
+    {
+      "name": "dir_btw_p_ca_catchment",
+      "comment": "area in-between pauto and casanare",
+      "type": "catchment",
+      "flow": "flow_dir_btw_p_ca"
+    },
+    {
+      "name": "dir_btw_cu_ca_catchment",
+      "comment": "area in-between cuisiana and casanare",
+      "type": "discharge",
+      "flow": "flow_dir_btw_cu_ca"
+    },
+    {
+      "name": "casanare_catchment",
+      "type": "catchment",
+      "flow": "flow_casanare"
+    },
+    {
+      "name": "dir_btw_ca_or_catchment",
+      "comment": "area in-between casanare and orinoco",
+      "type": "discharge",
+      "flow": "flow_dir_btw_ca_or"
+    },
+    {
+      "name": "total_inflow",
+      "type": "aggregatednode",
+      "nodes": [
+        "metica_catchment",
+        "guayuriba_catchment",
+        "negro_catchment",
+        "guatiquia_catchment",
+        "guacavia_catchment",
+        "humea_catchment",
+        "dir_btw_hu_up_catchment",
+        "guavio_catchment",
+        "garagoa_catchment",
+        "lengupa_catchment",
+        "dir_btw_gudam_up_catchment",
+        "lago_de_tota_catchment",
+        "upia_catchment",
+        "dir_btw_gb_yu_catchment",
+        "yucao_catchment",
+        "manacacias_catchment",
+        "cumaral_catchment",
+        "melua_catchment",
+        "tua_catchment",
+        "cusiana_catchment",
+        "dir_btw_cu_cs_catchment",
+        "cravo_sur_catchment",
+        "guanapalo_catchment",
+        "pauto_catchment",
+        "dir_btw_p_ca_catchment",
+        "dir_btw_cu_ca_catchment",
+        "casanare_catchment",
+        "dir_btw_ca_or_catchment"
+      ]
+    },
+        
+    
+    {
+      "name": "guavio_reservoir",
+      "type": "storage",
+      "max_volume": 1043000000,
+      "min_volume":  0,
+      "initial_volume": 514000000,
+      "cost": -1
+    },
+    {
+      "name": "garagoa_reservoir",
+      "type": "storage",
+      "max_volume": 680000000,
+      "min_volume":  0,
+      "initial_volume": 533000000,
+      "cost": -1
+    },
+    
+    {
+      "name": "guavio_precipitation",
+      "type": "input",
+      "max_flow": 0
+    },
+    {
+      "name": "garagoa_precipitation",
+      "type": "input",
+      "max_flow": 0
+    },
+    
+    {
+      "name": "guavio_evaporation",
+      "type": "output",
+      "max_flow": 0
+    },
+    {
+      "name": "garagoa_evaporation",
+      "type": "output",
+      "max_flow": 0
+    },
+    
+    {
+      "name": "metica_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["metica_Dfwu", "metica_Dfwr", "metica_Dirr", "metica_Dliv"],
+      "costs": -999
+    },
+    {
+      "name": "guayuriba_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["guayuriba_Dfwu", "guayuriba_Dirr", "guayuriba_Dliv", "guayuriba_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "negro_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["negro_Dfwu", "negro_Dirr", "negro_Dliv", "negro_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "guatiquia_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["guatiquia_Dfwu", "guatiquia_Dirr", "guatiquia_Dliv", "guatiquia_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "guacavia_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["guacavia_Dfwu", "guacavia_Dirr", "guacavia_Dliv", "guacavia_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "humea_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["humea_Dfwu", "humea_Dirr", "humea_Dliv", "humea_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "dir_btw_hu_up_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["dir_btw_hu_up_Dfwu", "dir_btw_hu_up_Dirr", "dir_btw_hu_up_Dliv", "dir_btw_hu_up_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "guavio_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["guavio_Dfwu", "guavio_Dirr", "guavio_Dliv", "guavio_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "garagoa_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["garagoa_Dfwu", "garagoa_Dirr", "garagoa_Dliv", "garagoa_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "lengupa_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["lengupa_Dfwu", "lengupa_Dirr", "lengupa_Dliv", "lengupa_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "lago_de_tota_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["lago_de_tota_Dfwu, lago_de_tota_Dirr", "lago_de_tota_Dliv", "lago_de_tota_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "upia_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["upia_Dfwu", "upia_Dirr", "upia_Dliv", "upia_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "dir_btw_gb_yu_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["dir_btw_gb_yu_Dfwu", "dir_btw_gb_yu_Dirr", "dir_btw_gb_yu_Dliv", "dir_btw_gb_yu_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "yucao_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["yucao_Dfwu", "yucao_Dirr", "yucao_Dliv", "yucao_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "manacacias_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["manacacias_Dfwu", "manacacias_Dirr", "manacacias_Dliv", "manacacias_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "cumaral_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["cumaral_Dfwu", "cumaral_Dirr", "cumaral_Dliv", "cumaral_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "melua_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["melua_Dfwu", "melua_Dirr", "melua_Dliv", "melua_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "tua_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["tua_Dfwu", "tua_Dirr", "tua_Dliv", "tua_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "cusiana_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["cusiana_Dfwu", "cusiana_Dirr", "cusiana_Dliv", "cusiana_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "dir_btw_cu_cs_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["dir_btw_cu_cs_Dfwu", "dir_btw_cu_cs_Dirr", "dir_btw_cu_cs_Dliv", "dir_btw_cu_cs_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "cravo_sur_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["cravo_sur_Dfwu", "cravo_sur_Dirr", "cravo_sur_Dliv", "cravo_sur_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "guanapalo_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["guanapalo_Dfwu", "guanapalo_Dirr", "guanapalo_Dliv", "guanapalo_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "pauto_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["pauto_Dfwu", "pauto_Dirr", "pauto_Dliv", "pauto_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "dir_btw_p_ca_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["dir_btw_p_ca_Dfwu", "dir_btw_p_ca_Dirr", "dir_btw_p_ca_Dliv", "dir_btw_p_ca_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "dir_btw_cu_ca_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["dir_btw_cu_ca_Dfwu", "dir_btw_cu_ca_Dirr", "dir_btw_cu_ca_Dliv", "dir_btw_cu_ca_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "casanare_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["casanare_Dfwu", "casanare_Dirr", "casanare_Dliv", "casanare_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "dir_btw_ca_or_Dtot",
+      "type": "piecewiselink",
+      "nsteps": 4,
+      "max_flows": ["dir_btw_ca_or_Dfwu", "dir_btw_ca_or_Dirr", "dir_btw_ca_or_Dliv", "dir_btw_ca_or_Dfwr"],
+      "costs": -999
+    },
+    {
+      "name": "Dtot_output_node",
+      "type": "output"
+    },
+
+        
+    {
+      "name": "garagoa_res_release",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["garagoa_release_max_flow", null],
+      "costs": [-1000, 2000]
+    },
+    {    
+      "name": "guavio_res_release",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["guavio_release_max_flow", null],
+      "costs": [-1000, 2000]
+    },
+    {
+      "name": "junction_metica_humea",
+      "type": "link"
+    },
+    {
+      "name": "junction_metica_yucao_manacacias",
+      "type": "link"
+    },
+    {
+      "name": "junction_meta_tua_cusiana",
+      "type": "link"
+    },
+    {
+      "name": "junction_meta_casanare",
+      "type": "link"
+    },  
+    
+    
+    
+    
+    
+    {    
+      "name": "metica_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["metica_to_dir_btw_gb_yu_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "guayuriba_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["guayuriba_to_dir_btw_gb_yu_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "negro_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["negro_to_junction_metica_humea_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "guatiquia_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["guatiquia_to_junction_metica_humea_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "guacavia_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["guacavia_to_junction_metica_humea_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "humea_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["humea_to_junction_metica_humea_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "dir_btw_hu_up_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["dir_btw_hu_up_to_dir_btw_gb_yu_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "guavio_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "comment": "Denv below Guavio reservoir",
+      "max_flows": [
+        {"type": "aggregated", "agg_func": "product",
+         "parameters": ["guavio_to_dir_btw_gudam_up_Denv", 0.945]},
+        null
+        ],
+      "costs": -999
+    },
+    {    
+      "name": "garagoa_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["garagoa_to_dir_btw_gudam_up_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "lengupa_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["lengupa_to_dir_btw_gudam_up_Denv", null],
+      "costs": -999
+    },
+    {
+      "name": "dir_btw_gudam_up_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["dir_btw_gudam_up_Denv_to_upia_Denv", null],
+      "costs": -999
+    },
+    {
+      "name": "lago_de_tota_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["lago_de_tota_to_upia_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "upia_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["upia_to_dir_btw_gb_yu_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "dir_btw_gb_yu_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["dir_btw_gb_yu_to_junct_metica_yu_man_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "yucao_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["yucao_to_junct_metica_yu_man_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "manacacias_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["manacacias_to_junct_metica_yu_man_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "melua_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["melua_to_manacacias_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "cumaral_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["cumaral_to_manacacias_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "tua_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["tua_to_junct_meta_tua_cusiana_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "cusiana_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["cusiana_to_manacacias_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "dir_btw_cu_cs_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["dir_btw_cu_cs_to_dir_btw_cu_ca_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "cravo_sur_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["cravo_sur_to_dir_btw_cu_ca_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "guanapalo_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["guanapalo_to_dir_btw_cu_ca_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "pauto_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["pauto_to_dir_btw_cu_ca_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "dir_btw_p_ca_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["dir_btw_p_ca_to_junct_meta_casanare_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "dir_btw_cu_ca_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["dir_btw_cu_ca_to_junct_meta_casanare_Denv", null],
+      "costs": -999
+    },
+    {    
+      "name": "casanare_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["casanare_to_junct_meta_casanare_Denv", null],
+      "costs": -999
+    },
+    {
+      "name": "dir_btw_ca_or_Denv",
+      "type": "piecewiselink",
+      "nsteps": 2,
+      "max_flows": ["dir_btw_ca_or_to_outflow_Denv", null],
+      "costs": -999
+    },
+    {
+      "name": "meta_downstream_carreno",
+      "type": "output"
+    },
+
+
+    {
+      "name": "HC_out_guavio",
+      "type": "output",
+      "cost": 100000
+    }
+    ,{
+      "name": "HC_out_garagoa",
+      "type": "output",
+      "cost": 100000
+    },
+
+    {
+      "name": "HC_in_garagoa",
+      "type": "input",
+      "cost": 100000
+    },
+    {
+      "name": "HC_in_guavio",
+      "type": "input",
+      "cost": 100000
+    },
+    {
+      "name": "Add_virtual_water",
+      "type": "input",
+      "cost": 100000
+    }
+    
+  ],
+  "edges": [
+    ["metica_catchment", "metica_Dtot"],
+    ["metica_Dtot", "Dtot_output_node"],
+    ["metica_catchment", "metica_Denv"],
+    ["metica_Denv", "dir_btw_gb_yu_catchment"],
+    
+    ["guayuriba_catchment", "guayuriba_Dtot"],
+    ["guayuriba_Dtot", "Dtot_output_node"],
+    ["guayuriba_catchment", "guayuriba_Denv"],
+    ["guayuriba_Denv", "dir_btw_gb_yu_catchment"],
+    
+    ["negro_catchment", "negro_Dtot"],
+    ["negro_Dtot", "Dtot_output_node"],
+    ["negro_catchment", "negro_Denv"],
+    ["negro_Denv", "junction_metica_humea"],
+    
+    ["guatiquia_catchment", "guatiquia_Dtot"],
+    ["guatiquia_Dtot", "Dtot_output_node"],
+    ["guatiquia_catchment", "guatiquia_Denv"],
+    ["guatiquia_Denv", "junction_metica_humea"],
+    
+    ["guacavia_catchment", "guacavia_Dtot"],
+    ["guacavia_Dtot", "Dtot_output_node"],
+    ["guacavia_catchment", "guacavia_Denv"],
+    ["guacavia_Denv", "junction_metica_humea"],
+    
+    ["humea_catchment", "humea_Dtot"],
+    ["humea_Dtot", "Dtot_output_node"],
+    ["humea_catchment", "humea_Denv"],
+    ["humea_Denv", "junction_metica_humea"],
+    
+    ["junction_metica_humea", "dir_btw_gb_yu_catchment"],
+    
+    ["dir_btw_hu_up_catchment", "dir_btw_hu_up_Dtot"],
+    ["dir_btw_hu_up_Dtot", "Dtot_output_node"],
+    ["dir_btw_hu_up_catchment", "dir_btw_hu_up_Denv"],
+    ["dir_btw_hu_up_Denv", "dir_btw_gb_yu_catchment"],
+    
+    ["guavio_catchment", "guavio_Dtot"],
+    ["guavio_Dtot", "Dtot_output_node"],
+    ["guavio_catchment", "guavio_reservoir"],
+    ["guavio_precipitation", "guavio_reservoir"],
+    ["guavio_reservoir", "guavio_evaporation"],
+    ["guavio_reservoir", "guavio_res_release"],
+    ["guavio_res_release", "guavio_Denv"],
+    ["guavio_Denv", "dir_btw_gudam_up_catchment"],
+    
+    ["garagoa_catchment", "garagoa_Dtot"],
+    ["garagoa_Dtot", "Dtot_output_node"],
+    ["garagoa_catchment", "garagoa_reservoir"],
+    ["garagoa_precipitation", "garagoa_reservoir"],
+    ["garagoa_reservoir", "garagoa_evaporation"],
+    ["garagoa_reservoir", "garagoa_res_release"],
+    ["garagoa_res_release", "garagoa_Denv"],
+    ["garagoa_Denv", "dir_btw_gudam_up_catchment"],
+    
+    ["lengupa_catchment", "lengupa_Dtot"],
+    ["lengupa_Dtot", "Dtot_output_node"],
+    ["lengupa_catchment", "lengupa_Denv"],
+    ["lengupa_Denv", "dir_btw_gudam_up_catchment"],
+    
+    ["dir_btw_gudam_up_catchment", "dir_btw_gudam_up_Denv"],
+    ["dir_btw_gudam_up_Denv", "upia_catchment"],
+    
+    ["lago_de_tota_catchment", "lago_de_tota_Dtot"],
+    ["lago_de_tota_Dtot", "Dtot_output_node"],
+    ["lago_de_tota_catchment", "lago_de_tota_Denv"],
+    ["lago_de_tota_Denv", "upia_catchment"],
+
+    ["upia_catchment", "upia_Dtot"],
+    ["upia_Dtot", "Dtot_output_node"],
+    ["upia_catchment", "upia_Denv"],
+    ["upia_Denv", "dir_btw_gb_yu_catchment"],
+    
+    ["dir_btw_gb_yu_catchment", "dir_btw_gb_yu_Dtot"],
+    ["dir_btw_gb_yu_Dtot", "Dtot_output_node"],
+    ["dir_btw_gb_yu_catchment", "dir_btw_gb_yu_Denv"],
+    ["dir_btw_gb_yu_Denv", "junction_metica_yucao_manacacias"],
+    
+    ["yucao_catchment", "yucao_Dtot"],
+    ["yucao_Dtot", "Dtot_output_node"],
+    ["yucao_catchment", "yucao_Denv"],
+    ["yucao_Denv", "junction_metica_yucao_manacacias"],
+    
+    ["manacacias_catchment", "manacacias_Dtot"],
+    ["manacacias_Dtot", "Dtot_output_node"],
+    ["manacacias_catchment", "manacacias_Denv"],
+    ["manacacias_Denv", "junction_metica_yucao_manacacias"],
+    
+    ["cumaral_catchment", "cumaral_Dtot"],
+    ["cumaral_Dtot", "Dtot_output_node"],
+    ["cumaral_catchment", "cumaral_Denv"],
+    ["cumaral_Denv", "manacacias_catchment"],
+    
+    ["melua_catchment", "melua_Dtot"],
+    ["melua_Dtot", "Dtot_output_node"],
+    ["melua_catchment", "melua_Denv"],
+    ["melua_Denv", "manacacias_catchment"],
+    
+    ["tua_catchment", "tua_Dtot"],
+    ["tua_Dtot", "Dtot_output_node"],
+    ["tua_catchment", "tua_Denv"],
+    ["tua_Denv", "junction_meta_tua_cusiana"],
+    
+    ["junction_metica_yucao_manacacias", "junction_meta_tua_cusiana"],
+    
+    ["cusiana_catchment", "cusiana_Dtot"],
+    ["cusiana_Dtot", "Dtot_output_node"],
+    ["cusiana_catchment", "cusiana_Denv"],
+    ["cusiana_Denv", "manacacias_catchment"],
+    
+    ["junction_meta_tua_cusiana", "dir_btw_cu_ca_catchment"],
+    
+    ["dir_btw_cu_cs_catchment", "dir_btw_cu_cs_Dtot"],
+    ["dir_btw_cu_cs_Dtot", "Dtot_output_node"],
+    ["dir_btw_cu_cs_catchment", "dir_btw_cu_cs_Denv"],
+    ["dir_btw_cu_cs_Denv", "dir_btw_cu_ca_catchment"],
+    
+    ["cravo_sur_catchment", "cravo_sur_Dtot"],
+    ["cravo_sur_Dtot", "Dtot_output_node"],
+    ["cravo_sur_catchment", "cravo_sur_Denv"],
+    ["cravo_sur_Denv", "dir_btw_cu_ca_catchment"],
+    
+    ["guanapalo_catchment", "guanapalo_Dtot"],
+    ["guanapalo_Dtot", "Dtot_output_node"],
+    ["guanapalo_catchment", "guanapalo_Denv"],
+    ["guanapalo_Denv", "dir_btw_cu_ca_catchment"],
+    
+    ["pauto_catchment", "pauto_Dtot"],
+    ["pauto_Dtot", "Dtot_output_node"],
+    ["pauto_catchment", "pauto_Denv"],
+    ["pauto_Denv", "dir_btw_cu_ca_catchment"],
+    
+    ["dir_btw_p_ca_catchment", "dir_btw_p_ca_Dtot"],
+    ["dir_btw_p_ca_Dtot", "Dtot_output_node"],
+    ["dir_btw_p_ca_catchment", "dir_btw_p_ca_Denv"],
+    ["dir_btw_p_ca_Denv", "junction_meta_casanare"],
+    
+    ["dir_btw_cu_ca_catchment", "dir_btw_cu_ca_Dtot"],
+    ["dir_btw_cu_ca_Dtot", "Dtot_output_node"],
+    ["dir_btw_cu_ca_catchment", "dir_btw_cu_ca_Denv"],
+    ["dir_btw_cu_ca_Denv", "junction_meta_casanare"],
+    
+    ["casanare_catchment", "casanare_Dtot"],
+    ["casanare_Dtot", "Dtot_output_node"],
+    ["casanare_catchment", "casanare_Denv"],
+    ["casanare_Denv", "junction_meta_casanare"],
+    
+    ["junction_meta_casanare", "dir_btw_ca_or_catchment"],
+    
+    ["dir_btw_ca_or_catchment", "dir_btw_ca_or_Dtot"],
+    ["dir_btw_ca_or_Dtot", "Dtot_output_node"],
+    ["dir_btw_ca_or_catchment", "dir_btw_ca_or_Denv"],
+    ["dir_btw_ca_or_Denv", "meta_downstream_carreno"],
+
+    ["HC_in_garagoa", "garagoa_reservoir"],
+    ["garagoa_reservoir", "HC_out_garagoa"],
+    ["HC_in_guavio", "guavio_reservoir"],
+    ["guavio_reservoir", "HC_out_guavio"],
+
+    ["Add_virtual_water", "lengupa_Denv"],
+    ["Add_virtual_water", "garagoa_Denv"],
+    ["Add_virtual_water", "guavio_Denv"],
+    ["Add_virtual_water", "lago_de_tota_Denv"],
+    ["Add_virtual_water", "dir_btw_gudam_up_Denv"],
+    ["Add_virtual_water", "cusiana_Denv"],
+    ["Add_virtual_water", "melua_Denv"],
+    ["Add_virtual_water", "upia_Denv"],
+    ["Add_virtual_water", "cumaral_Denv"],
+    ["Add_virtual_water", "guatiquia_Denv"],
+    ["Add_virtual_water", "humea_Denv"],
+    ["Add_virtual_water", "negro_Denv"],
+    ["Add_virtual_water", "guacavia_Denv"],
+    ["Add_virtual_water", "guayuriba_Denv"],
+    ["Add_virtual_water", "dir_btw_hu_up_Denv"],
+    ["Add_virtual_water", "metica_Denv"],
+    ["Add_virtual_water", "manacacias_Denv"],
+    ["Add_virtual_water", "dir_btw_gb_yu_Denv"],
+    ["Add_virtual_water", "yucao_Denv"],
+    ["Add_virtual_water", "tua_Denv"],
+    ["Add_virtual_water", "pauto_Denv"],
+    ["Add_virtual_water", "guanapalo_Denv"],
+    ["Add_virtual_water", "cravo_sur_Denv"],
+    ["Add_virtual_water", "dir_btw_cu_cs_Denv"],
+    ["Add_virtual_water", "dir_btw_cu_ca_Denv"],
+    ["Add_virtual_water", "casanare_Denv"],
+    ["Add_virtual_water", "dir_btw_p_ca_Denv"],
+    ["Add_virtual_water", "dir_btw_ca_or_Denv"],
+
+    ["Add_virtual_water", "lengupa_Dtot"],
+    ["Add_virtual_water", "garagoa_Dtot"],
+    ["Add_virtual_water", "guavio_Dtot"],
+    ["Add_virtual_water", "lago_de_tota_Dtot"],
+    ["Add_virtual_water", "cusiana_Dtot"],
+    ["Add_virtual_water", "melua_Dtot"],
+    ["Add_virtual_water", "upia_Dtot"],
+    ["Add_virtual_water", "cumaral_Dtot"],
+    ["Add_virtual_water", "guatiquia_Dtot"],
+    ["Add_virtual_water", "humea_Dtot"],
+    ["Add_virtual_water", "negro_Dtot"],
+    ["Add_virtual_water", "guacavia_Dtot"],
+    ["Add_virtual_water", "guayuriba_Dtot"],
+    ["Add_virtual_water", "dir_btw_hu_up_Dtot"],
+    ["Add_virtual_water", "metica_Dtot"],
+    ["Add_virtual_water", "manacacias_Dtot"],
+    ["Add_virtual_water", "dir_btw_gb_yu_Dtot"],
+    ["Add_virtual_water", "yucao_Dtot"],
+    ["Add_virtual_water", "tua_Dtot"],
+    ["Add_virtual_water", "pauto_Dtot"],
+    ["Add_virtual_water", "guanapalo_Dtot"],
+    ["Add_virtual_water", "cravo_sur_Dtot"],
+    ["Add_virtual_water", "dir_btw_cu_cs_Dtot"],
+    ["Add_virtual_water", "dir_btw_cu_ca_Dtot"],
+    ["Add_virtual_water", "casanare_Dtot"],
+    ["Add_virtual_water", "dir_btw_p_ca_Dtot"],
+    ["Add_virtual_water", "dir_btw_ca_or_Dtot"]
+
+
+
+  ],
+  "parameters": {
+    "flow_metica": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Metica"
+    },
+    "flow_guayuriba": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Guayuriba"
+    },
+    "flow_negro": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Negro"
+    },
+    "flow_guatiquia": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Guatiquia"
+    },
+    "flow_guacavia": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Guacavia"
+    },
+    "flow_humea": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Humea"
+    },
+    "flow_dir_btw_hu_up": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Dir_btw_Hu_Up"
+    },
+    "flow_guavio": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Guavio"
+    },
+    "flow_garagoa": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Garagoa"
+    },
+    "flow_lengupa": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Lengupa"
+    },
+    "flow_lago_de_tota": {
+      "type": "dataframe",
+      "url": "",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Lago de Tota"
+    },
+    "flow_upia": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Upia"
+    },
+    "flow_dir_btw_gb_yu": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Dir_btw_Gb_Yu"
+    },
+    "flow_yucao": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Yucao"
+    },
+    "flow_manacacias": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Manacacias"
+    },
+    "flow_cumaral": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Cumaral"
+    },
+    "flow_melua": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Melua"
+    },
+    "flow_tua": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Tua"
+    },
+    "flow_cusiana": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Cusiana"
+    },
+    "flow_dir_btw_cu_cs": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Dir_btw_Cu_CS"
+    },
+    "flow_cravo_sur": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Cravo Sur"
+    },
+    "flow_guanapalo": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Guanapalo"
+    },
+    "flow_pauto": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Pauto"
+    },
+    "flow_dir_btw_p_ca": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Dir_btw_P_Ca"
+    },
+    "flow_dir_btw_cu_ca": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Dir_btw_Cu_Ca"
+    },
+    "flow_casanare": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Casanare"
+    },
+    "flow_dir_btw_ca_or": {
+      "type": "dataframe",
+      "url": " ",
+      "index_col": "Date",
+      "parse_dates": true,
+      "column": "Dir_btw_Ca_Or"
+    },
+    
+    
+    
+    
+    "garagoa_area": {
+      "type": "VolumeAreaCurve",
+      "url": ["../input/reservoirs", "garagoa"]
+    },
+    "precip_over_garagoa": {
+      "type": "aggregated",
+      "agg_func": "product",
+      "parameters": ["garagoa_area", "garagoa_precip_mm", 0.001]
+    },
+    "garagoa_precip_mm": {
+      "type": "Reservoir_Precip",
+      "url": "../input/weather/historical/",
+      "hrus": ["garagoa"]
+    },
+    "evap_over_garagoa": {
+      "type": "aggregated",
+      "agg_func": "product",
+      "parameters": ["garagoa_area", "garagoa_pet_mm", 0.001]
+    },
+    "garagoa_pet_mm": {
+      "type": "Reservoir_Evap_Demand",
+      "url": "../input/weather/historical/",
+      "hrus": ["garagoa"]
+    },
+    
+    
+    "guavio_area": {
+      "type": "VolumeAreaCurve",
+      "url": ["../input/reservoirs", "guavio"]
+    },
+    "precip_over_guavio": {
+      "type": "aggregated",
+      "agg_func": "product",
+      "parameters": ["guavio_area", "guavio_precip_mm", 0.001]
+    },
+    "guavio_precip_mm": {
+      "type": "Reservoir_Precip",
+      "url": "../input/weather/historical/",
+      "hrus": ["guavio"]
+    },
+    "evap_over_guavio": {
+      "type": "aggregated",
+      "agg_func": "product",
+      "parameters": ["guavio_area", "guavio_pet_mm", 0.001]
+    },
+    "guavio_pet_mm": {
+      "type": "Reservoir_Evap_Demand",
+      "url": "../input/weather/historical/",
+      "hrus": ["guavio"]
+    },
+    
+    "metica_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Metica",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guayuriba_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guayuriba",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "negro_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Negro",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guatiquia_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guatiquia",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "humea_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Humea",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_hu_up_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Hu_Up",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guacavia_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guacavia",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guavio_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guavio",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "garagoa_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Garagoa",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "lengupa_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Lengupa",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_gudam_up_Dfwu" : {
+        "comment": "Freshwater demand is assigned to Guavio upstream catchment only",
+        "type": "constant",
+        "value": 0
+    },
+    "lago_de_tota_Dfwu" : {
+      "type": "Freshwater_Demand",
+      "catchment": "Lago de Tota",
+      "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+      "community": "Urban",
+      "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+      "projection_demand_year": -999
+  },
+    "upia_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Upia",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_gb_yu_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Gb_Yu",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "yucao_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Yucao",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "manacacias_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Manacacias",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cumaral_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Cumaral",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "melua_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Melua",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "tua_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Tua",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cusiana_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Cusiana",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_cu_cs_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Cu_CS",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cravo_sur_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Cravo Sur",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guanapalo_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guanapalo",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "pauto_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Pauto",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_p_ca_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_P_Ca",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_cu_ca_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Cu_Ca",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "casanare_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Casanare",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_ca_or_Dfwu" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Ca_Or",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Urban",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    
+    
+    
+    "metica_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Metica",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guayuriba_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guayuriba",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "negro_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Negro",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guatiquia_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guatiquia",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "humea_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Humea",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_hu_up_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Hu_Up",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guacavia_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guacavia",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guavio_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guavio",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "garagoa_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Garagoa",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "lengupa_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Lengupa",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_gudam_up_Dfwr" : {
+        "comment": "Freshwater demand is assigned to Guavio upstream catchment only",
+        "type": "constant",
+        "value": 0
+    },
+    "lago_de_tota_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Lago de Tota",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "upia_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Upia",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_gb_yu_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Gb_Yu",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "yucao_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Yucao",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "manacacias_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Manacacias",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cumaral_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Cumaral",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "melua_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Melua",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "tua_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Tua",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cusiana_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Cusiana",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_cu_cs_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Cu_CS",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cravo_sur_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Cravo Sur",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guanapalo_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Guanapalo",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "pauto_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Pauto",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_p_ca_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_P_Ca",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_cu_ca_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Cu_Ca",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "casanare_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Casanare",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_ca_or_Dfwr" : {
+        "type": "Freshwater_Demand",
+        "catchment": "Dir_btw_Ca_Or",
+        "urban_demand_file": "../input/freshwater_demand/CST/Projection_Urban_and_Rural_Population_for_OWF_CST.csv",
+        "community": "Rural",
+        "freshwater_parameters": "../input/parameters/freshwater_parameters.csv",
+        "projection_demand_year": -999
+    },
+    
+    
+    
+    "metica_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Metica",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "guayuriba_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Guayuriba",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "negro_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Negro",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "guatiquia_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Guatiquia",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "humea_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Humea",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "dir_btw_hu_up_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Dir_btw_Hu_Up",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "guacavia_Dirr": {
+        "type": "Irrigation_Demand",
+        "catchment": "Guacavia",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "guavio_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Guavio",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "garagoa_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Garagoa",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "lengupa_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Lengupa",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "dir_btw_gudam_up_Dirr" : {
+        "comment": "demand is assigned to Guavio upstream catchment only",
+        "type": "constant",
+        "value": 0
+    },
+    "lago_de_tota_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Lago de Tota",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "upia_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Upia",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "dir_btw_gb_yu_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Dir_btw_Gb_Yu",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "yucao_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Yucao",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "manacacias_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Manacacias",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "cumaral_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Cumaral",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "melua_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Melua",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "tua_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Tua",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "cusiana_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Cusiana",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "dir_btw_cu_cs_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Dir_btw_Cu_CS",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "cravo_sur_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Cravo Sur",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "guanapalo_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Guanapalo",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "pauto_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Pauto",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "dir_btw_p_ca_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Dir_btw_P_Ca",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "dir_btw_cu_ca_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Dir_btw_Cu_Ca",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "casanare_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Casanare",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    "dir_btw_ca_or_Dirr" : {
+        "type": "Irrigation_Demand",
+        "catchment": "Dir_btw_Ca_Or",
+        "crops": ["Rice", "Rice"],
+        "crop_schedules": ["PDate=04-01_NetIrrSMT100", "PDate=08-15_NetIrrSMT100"],
+        "trees": ["OilPalm"],
+        "projection_demand_year": -999,
+        "url": {
+            "crop_demand_file": "",
+            "trees_demand_file": "",
+            "irrigation_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+            "irrigation_parameters": "../input/parameters/Irrigation_parameters.csv"
+        }
+    },
+    
+    "metica_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Metica",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guayuriba_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Guayuriba",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "negro_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Negro",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guatiquia_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Guatiquia",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "humea_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Humea",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_hu_up_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Dir_btw_Hu_Up",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guacavia_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Guacavia",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guavio_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Guavio",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "garagoa_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Garagoa",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "lengupa_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Lengupa",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_gudam_up_Dliv" : {
+        "comment": "demand is only assigned to Guavio upstream catchment",
+        "type": "constant",
+        "value": 0
+    },
+    "lago_de_tota_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Lago de Tota",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "upia_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Upia",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_gb_yu_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Dir_btw_Gb_Yu",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "yucao_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Yucao",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "manacacias_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Manacacias",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cumaral_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Cumaral",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "melua_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Melua",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "tua_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Tua",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cusiana_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Cusiana",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_cu_cs_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Dir_btw_Cu_CS",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "cravo_sur_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Cravo Sur",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "guanapalo_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Guanapalo",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "pauto_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Pauto",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_p_ca_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Dir_btw_P_Ca",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_cu_ca_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Dir_btw_Cu_Ca",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "casanare_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Casanare",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    "dir_btw_ca_or_Dliv" : {
+        "type": "Livestock_Demand",
+        "catchment": "Dir_btw_Ca_Or",
+        "livestock_demand_scenario": "../input/demand_trend_scenarios/Trend_CropType_and_Livestock_OWF.csv",
+        "livestock_parameters": "../input/parameters/Livestock_parameters.csv",
+        "projection_demand_year": -999
+    },
+    
+    
+    "metica_to_dir_btw_gb_yu_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Metica",
+        "column": "Qenv_daily_m3"
+    },
+    "guayuriba_to_dir_btw_gb_yu_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Guayuriba",
+        "column": "Qenv_daily_m3"
+    },
+    "negro_to_junction_metica_humea_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Negro",
+        "column": "Qenv_daily_m3"
+    },
+    "guatiquia_to_junction_metica_humea_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Guatiquia",
+        "column": "Qenv_daily_m3"
+    },
+    "guacavia_to_junction_metica_humea_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Guacavia",
+        "column": "Qenv_daily_m3"
+    },
+    "humea_to_junction_metica_humea_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Humea",
+        "column": "Qenv_daily_m3"
+    },
+    "dir_btw_hu_up_to_dir_btw_gb_yu_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Dir_btw_Hu_Up",
+        "column": "Qenv_daily_m3"
+    },
+    "dir_btw_gudam_up_Denv_to_upia_Denv": {
+        "type": "aggregated",
+        "agg_func": "sum",
+        "comment": "guavio_to_dir_btw_gudam_up_Denv is calculated in the whole Guavio basin (unit #16)",
+        "parameters": [
+            "guavio_to_dir_btw_gudam_up_Denv",
+            "garagoa_to_dir_btw_gudam_up_Denv",
+            "lengupa_to_dir_btw_gudam_up_Denv"
+        ]
+    },
+    "guavio_to_dir_btw_gudam_up_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Guavio",
+        "column": "Qenv_daily_m3"
+    },
+    "garagoa_to_dir_btw_gudam_up_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Garagoa",
+        "column": "Qenv_daily_m3"
+    },
+    "lengupa_to_dir_btw_gudam_up_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Lengupa",
+        "column": "Qenv_daily_m3"
+    },
+    "upia_to_dir_btw_gb_yu_Denv": {
+        "type": "aggregated",
+        "agg_func": "sum",
+        "parameters": [
+            "upia_to_dir_btw_gb_yu_Denv_local",
+            "lago_de_tota_to_upia_Denv",
+            "dir_btw_gudam_up_Denv_to_upia_Denv"
+        ]
+    },
+    "upia_to_dir_btw_gb_yu_Denv_local": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Upia",
+        "column": "Qenv_daily_m3"
+    },
+    "lago_de_tota_to_upia_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Lago de Tota",
+        "column": "Qenv_daily_m3"
+    },
+    "dir_btw_gb_yu_to_junct_metica_yu_man_Denv": {
+        "type": "aggregated",
+        "agg_func": "sum",
+        "parameters": [
+            "dir_btw_gb_yu_to_junct_metica_yu_man_Denv_local",
+            "metica_to_dir_btw_gb_yu_Denv",
+            "guayuriba_to_dir_btw_gb_yu_Denv",
+            "negro_to_junction_metica_humea_Denv",
+            "guatiquia_to_junction_metica_humea_Denv",
+            "guacavia_to_junction_metica_humea_Denv",
+            "humea_to_junction_metica_humea_Denv",
+            "dir_btw_hu_up_to_dir_btw_gb_yu_Denv",
+            "upia_to_dir_btw_gb_yu_Denv"
+        ]
+    },
+    
+    "dir_btw_gb_yu_to_junct_metica_yu_man_Denv_local": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Dir_btw_Gb_Yu",
+        "column": "Qenv_daily_m3"
+    },
+    "yucao_to_junct_metica_yu_man_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Yucao",
+        "column": "Qenv_daily_m3"
+    },
+    "manacacias_to_junct_metica_yu_man_Denv": {
+        "type": "aggregated",
+        "agg_func": "sum",
+        "parameters": [
+            "manacacias_to_junct_metica_yu_man_Denv_local",
+            "melua_to_manacacias_Denv",
+            "cumaral_to_manacacias_Denv",
+            "cusiana_to_manacacias_Denv"
+        ]
+    },
+    "manacacias_to_junct_metica_yu_man_Denv_local": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Manacacias",
+        "column": "Qenv_daily_m3"
+    },
+    "melua_to_manacacias_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Melua",
+        "column": "Qenv_daily_m3"
+    },
+    "cumaral_to_manacacias_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Cumaral",
+        "column": "Qenv_daily_m3"
+    },
+    "tua_to_junct_meta_tua_cusiana_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Tua",
+        "column": "Qenv_daily_m3"
+    },
+    "cusiana_to_manacacias_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Cusiana",
+        "column": "Qenv_daily_m3"
+    },
+    "dir_btw_cu_cs_to_dir_btw_cu_ca_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Dir_btw_Cu_CS",
+        "column": "Qenv_daily_m3"
+    },
+    "cravo_sur_to_dir_btw_cu_ca_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Cravo Sur",
+        "column": "Qenv_daily_m3"
+    },
+    "guanapalo_to_dir_btw_cu_ca_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Guanapalo",
+        "column": "Qenv_daily_m3"
+    },
+    "pauto_to_dir_btw_cu_ca_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Pauto",
+        "column": "Qenv_daily_m3"
+    },
+    "dir_btw_p_ca_to_junct_meta_casanare_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Dir_btw_P_Ca",
+        "column": "Qenv_daily_m3"
+    },
+    "dir_btw_cu_ca_to_junct_meta_casanare_Denv": {
+        "type": "aggregated",
+        "agg_func": "sum",
+        "parameters": [
+            "dir_btw_cu_ca_to_junct_meta_casanare_Denv_local",
+            "dir_btw_cu_cs_to_dir_btw_cu_ca_Denv",
+            "cravo_sur_to_dir_btw_cu_ca_Denv",
+            "guanapalo_to_dir_btw_cu_ca_Denv",
+            "pauto_to_dir_btw_cu_ca_Denv",
+            "yucao_to_junct_metica_yu_man_Denv",
+            "manacacias_to_junct_metica_yu_man_Denv",
+            "dir_btw_gb_yu_to_junct_metica_yu_man_Denv"            
+        ]
+    },
+    "dir_btw_cu_ca_to_junct_meta_casanare_Denv_local": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Dir_btw_Cu_Ca",
+        "column": "Qenv_daily_m3"
+    },
+    "casanare_to_junct_meta_casanare_Denv": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Casanare",
+        "column": "Qenv_daily_m3"
+    },
+    "dir_btw_ca_or_to_outflow_Denv": {
+        "type": "aggregated",
+        "agg_func": "sum",
+        "parameters": [
+            "dir_btw_ca_or_to_outflow_Denv_local",
+            "casanare_to_junct_meta_casanare_Denv",
+            "dir_btw_p_ca_to_junct_meta_casanare_Denv",
+            "dir_btw_cu_ca_to_junct_meta_casanare_Denv"
+        ]
+    },
+    "dir_btw_ca_or_to_outflow_Denv_local": {
+        "type": "constant",
+        "url": "../../../input/parameters/minimum_flows_CST.csv",
+        "index_col": "Catchment",
+        "index": "Dir_btw_Ca_Or",
+        "column": "Qenv_daily_m3"
+    },
+    
+    
+    "Dfwu_demand": {
+      "type": "aggregated",
+      "agg_func": "sum",
+      "parameters": [
+        "garagoa_Dfwu",
+        "guavio_Dfwu",
+        "lengupa_Dfwu",
+        "cusiana_Dfwu",
+        "melua_Dfwu",
+        "lago_de_tota_Dfwu",
+        "upia_Dfwu",
+        "cumaral_Dfwu",
+        "guayuriba_Dfwu",
+        "guatiquia_Dfwu",
+        "negro_Dfwu",
+        "humea_Dfwu",
+        "guacavia_Dfwu",
+        "dir_btw_hu_up_Dfwu",
+        "metica_Dfwu",
+        "manacacias_Dfwu",
+        "dir_btw_gb_yu_Dfwu",
+        "yucao_Dfwu",
+        "tua_Dfwu",
+        "pauto_Dfwu",
+        "guanapalo_Dfwu",
+        "cravo_sur_Dfwu",
+        "dir_btw_cu_cs_Dfwu",
+        "dir_btw_cu_ca_Dfwu",
+        "casanare_Dfwu",
+        "dir_btw_p_ca_Dfwu",
+        "dir_btw_ca_or_Dfwu"
+      ]
+    },
+    "Dfwr_demand": {
+      "type": "aggregated",
+      "agg_func": "sum",
+      "parameters": [
+        "garagoa_Dfwr",
+        "guavio_Dfwr",
+        "lengupa_Dfwr",
+        "cusiana_Dfwr",
+        "melua_Dfwr",
+        "lago_de_tota_Dfwr",
+        "upia_Dfwr",
+        "cumaral_Dfwr",
+        "guayuriba_Dfwr",
+        "guatiquia_Dfwr",
+        "negro_Dfwr",
+        "humea_Dfwr",
+        "guacavia_Dfwr",
+        "dir_btw_hu_up_Dfwr",
+        "metica_Dfwr",
+        "manacacias_Dfwr",
+        "dir_btw_gb_yu_Dfwr",
+        "yucao_Dfwr",
+        "tua_Dfwr",
+        "pauto_Dfwr",
+        "guanapalo_Dfwr",
+        "cravo_sur_Dfwr",
+        "dir_btw_cu_cs_Dfwr",
+        "dir_btw_cu_ca_Dfwr",
+        "casanare_Dfwr",
+        "dir_btw_p_ca_Dfwr",
+        "dir_btw_ca_or_Dfwr"
+      ]
+    },
+    "Dliv_demand": {
+      "type": "aggregated",
+      "agg_func": "sum",
+      "parameters": [
+        "garagoa_Dliv",
+        "guavio_Dliv",
+        "lengupa_Dliv",
+        "cusiana_Dliv",
+        "melua_Dliv",
+        "lago_de_tota_Dliv",
+        "upia_Dliv",
+        "cumaral_Dliv",
+        "guayuriba_Dliv",
+        "guatiquia_Dliv",
+        "negro_Dliv",
+        "humea_Dliv",
+        "guacavia_Dliv",
+        "dir_btw_hu_up_Dliv",
+        "metica_Dliv",
+        "manacacias_Dliv",
+        "dir_btw_gb_yu_Dliv",
+        "yucao_Dliv",
+        "tua_Dliv",
+        "pauto_Dliv",
+        "guanapalo_Dliv",
+        "cravo_sur_Dliv",
+        "dir_btw_cu_cs_Dliv",
+        "dir_btw_cu_ca_Dliv",
+        "casanare_Dliv",
+        "dir_btw_p_ca_Dliv",
+        "dir_btw_ca_or_Dliv"
+      ]
+    },
+    "Dirr_demand": {
+      "type": "aggregated",
+      "agg_func": "sum",
+      "parameters": [
+        "garagoa_Dirr",
+        "guavio_Dirr",
+        "lengupa_Dirr",
+        "cusiana_Dirr",
+        "melua_Dirr",
+        "lago_de_tota_Dirr",
+        "upia_Dirr",
+        "cumaral_Dirr",
+        "guayuriba_Dirr",
+        "guatiquia_Dirr",
+        "negro_Dirr",
+        "humea_Dirr",
+        "guacavia_Dirr",
+        "dir_btw_hu_up_Dirr",
+        "metica_Dirr",
+        "manacacias_Dirr",
+        "dir_btw_gb_yu_Dirr",
+        "yucao_Dirr",
+        "tua_Dirr",
+        "pauto_Dirr",
+        "guanapalo_Dirr",
+        "cravo_sur_Dirr",
+        "dir_btw_cu_cs_Dirr",
+        "dir_btw_cu_ca_Dirr",
+        "casanare_Dirr",
+        "dir_btw_p_ca_Dirr",
+        "dir_btw_ca_or_Dirr"
+      ]
+    },
+    "Dtot_demand": {
+      "type": "aggregated",
+      "agg_func": "sum",
+      "parameters": [
+        "Dfwu_demand",
+        "Dfwr_demand",
+        "Dliv_demand",
+        "Dirr_demand"
+      ]
+    },
+    "garagoa_release_max_flow": {
+        "type": "Dam_Release",
+        "reservoir": "Bata",
+        "catchment": "garagoa",
+        "irr_upstream_deliveries": ["garagoa_Dirr"]
+    },
+    "guavio_release_max_flow": {
+        "type": "Dam_Release",
+        "reservoir": "Guavio",
+        "catchment": "guavio",
+        "irr_upstream_deliveries": ["guavio_Dirr"]
+    }
+    
+    
+    
+    
+  },
+  "recorders": {
+
+
+   "Guavio_storage_m3": {
+      "type": "NumpyArrayStorageRecorder",
+      "node": "guavio_reservoir"
+    },
+    "Guavio_res_release_CMD": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "guavio_res_release"
+    },
+    "Garagoa_storage_m3": {
+      "type": "NumpyArrayStorageRecorder",
+      "node": "garagoa_reservoir"
+    },
+    "Garagoa_res_release_CMD": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "garagoa_res_release"
+    },
+
+    "Deliveries_cmd": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "Dtot_output_node"
+    },
+
+    "Inflow_Guavio_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guavio_catchment"
+    },
+    
+    "Meta_downstream_carreno_cmd": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "meta_downstream_carreno"
+    },
+    
+    "Demand_FreshWaterUrban_TOTAL_cmd": {
+     "type": "NumpyArrayParameterRecorder",
+     "parameter": "Dfwu_demand"
+    },
+    "Demand_FreshWaterRural_TOTAL_cmd": {
+     "type": "NumpyArrayParameterRecorder",
+     "parameter": "Dfwr_demand"
+    },
+    "Demand_Livestock_TOTAL_cmd": {
+     "type": "NumpyArrayParameterRecorder",
+     "parameter": "Dliv_demand"
+    },
+    "Demand_Irrigation_TOTAL_cmd": {
+     "type": "NumpyArrayParameterRecorder",
+     "parameter": "Dirr_demand"
+    },
+
+
+    "Add_virtual_water": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "Add_virtual_water"
+    },
+    "HC_in_garagoa": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "HC_in_garagoa"
+    },
+    "HC_in_guavio": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "HC_in_guavio"
+    },
+    "HC_out_garagoa": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "HC_out_garagoa"
+    },
+    "HC_out_guavio": {
+      "type": "NumpyArrayNodeRecorder",
+      "node": "HC_out_guavio"
+    }
+    
+
+
+
+
+  }
+}
+    
+    
+    
+    
+    
+    

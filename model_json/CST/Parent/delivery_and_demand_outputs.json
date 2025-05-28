@@ -1,0 +1,817 @@
+{
+
+  "recorders": {
+      
+
+      "Deliveries_Metica_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "metica_Dtot"
+      },
+      "Dfwu_Metica_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "metica_Dfwu"
+      },
+      "Dfwr_Metica_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "metica_Dfwr"
+      },
+      "Dliv_Metica_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "metica_Dliv"
+      },
+      "Dirr_Metica_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "metica_Dirr"
+      },
+      "Denv_Metica_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "metica_to_dir_btw_gb_yu_Denv"
+      },
+      "To_downstream_from_Metica_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "metica_Denv"
+      },
+
+
+      "Deliveries_Guayuriba_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guayuriba_Dtot"
+      },
+      "Dfwu_Guayuriba_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guayuriba_Dfwu"
+      },
+      "Dfwr_Guayuriba_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guayuriba_Dfwr"
+      },
+      "Dliv_Guayuriba_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guayuriba_Dliv"
+      },
+      "Dirr_Guayuriba_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guayuriba_Dirr"
+      },
+      "Denv_Guayuriba_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guayuriba_to_dir_btw_gb_yu_Denv"
+      },
+      "To_downstream_from_Guayuriba_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guayuriba_Denv"
+      },
+
+
+      "Deliveries_Negro_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "negro_Dtot"
+      },
+      "Dfwu_Negro_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "negro_Dfwu"
+      },
+      "Dfwr_Negro_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "negro_Dfwr"
+      },
+      "Dliv_Negro_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "negro_Dliv"
+      },
+      "Dirr_Negro_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "negro_Dirr"
+      },
+      "Denv_Negro_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "negro_to_junction_metica_humea_Denv"
+      },
+      "To_downstream_from_Negro_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "negro_Denv"
+      },
+
+
+      "Deliveries_Guatiquia_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guatiquia_Dtot"
+      },
+      "Dfwu_Guatiquia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guatiquia_Dfwu"
+      },
+      "Dfwr_Guatiquia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guatiquia_Dfwr"
+      },
+      "Dliv_Guatiquia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guatiquia_Dliv"
+      },
+      "Dirr_Guatiquia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guatiquia_Dirr"
+      },
+      "Denv_Guatiquia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guatiquia_to_junction_metica_humea_Denv"
+      },
+      "To_downstream_from_Guatiquia_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guatiquia_Denv"
+      },
+
+
+      "Deliveries_Guacavia_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guacavia_Dtot"
+      },
+      "Dfwu_Guacavia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guacavia_Dfwu"
+      },
+      "Dfwr_Guacavia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guacavia_Dfwr"
+      },
+      "Dliv_Guacavia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guacavia_Dliv"
+      },
+      "Dirr_Guacavia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guacavia_Dirr"
+      },
+      "Denv_Guacavia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guacavia_to_junction_metica_humea_Denv"
+      },
+      "To_downstream_from_Guacavia_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guacavia_Denv"
+      },
+
+
+      "Deliveries_Humea_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "humea_Dtot"
+      },
+      "Dfwu_Humea_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "humea_Dfwu"
+      },
+      "Dfwr_Humea_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "humea_Dfwr"
+      },
+      "Dliv_Humea_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "humea_Dliv"
+      },
+      "Dirr_Humea_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "humea_Dirr"
+      },
+      "Denv_Humea_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "humea_to_junction_metica_humea_Denv"
+      },
+      "To_downstream_from_Humea_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "humea_Denv"
+      },
+
+
+      "Deliveries_Dir_btw_hu_up_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_hu_up_Dtot"
+      },
+      "Dfwu_Dir_btw_hu_up_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_hu_up_Dfwu"
+      },
+      "Dfwr_Dir_btw_hu_up_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_hu_up_Dfwr"
+      },
+      "Dliv_Dir_btw_hu_up_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_hu_up_Dliv"
+      },
+      "Dirr_Dir_btw_hu_up_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_hu_up_Dirr"
+      },
+      "Denv_Dir_btw_hu_up_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_hu_up_to_dir_btw_gb_yu_Denv"
+      },
+      "To_downstream_from_Dir_btw_hu_up_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_hu_up_Denv"
+      },
+
+
+      "Deliveries_Guavio_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guavio_Dtot"
+      },
+      "Dfwu_Guavio_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guavio_Dfwu"
+      },
+      "Dfwr_Guavio_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guavio_Dfwr"
+      },
+      "Dliv_Guavio_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guavio_Dliv"
+      },
+      "Dirr_Guavio_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guavio_Dirr"
+      },
+      "Denv_Guavio_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_gudam_up_Denv_to_upia_Denv"
+      },
+      "To_downstream_from_Guavio_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_gudam_up_Denv"
+      },
+
+
+      "Deliveries_Garagoa_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "garagoa_Dtot"
+      },
+      "Dfwu_Garagoa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "garagoa_Dfwu"
+      },
+      "Dfwr_Garagoa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "garagoa_Dfwr"
+      },
+      "Dliv_Garagoa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "garagoa_Dliv"
+      },
+      "Dirr_Garagoa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "garagoa_Dirr"
+      },
+      "Denv_Garagoa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "garagoa_to_dir_btw_gudam_up_Denv"
+      },
+      "To_downstream_from_Garagoa_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "garagoa_Denv"
+      },
+
+
+      "Deliveries_Lengupa_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "lengupa_Dtot"
+      },
+      "Dfwu_Lengupa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lengupa_Dfwu"
+      },
+      "Dfwr_Lengupa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lengupa_Dfwr"
+      },
+      "Dliv_Lengupa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lengupa_Dliv"
+      },
+      "Dirr_Lengupa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lengupa_Dirr"
+      },
+      "Denv_Lengupa_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lengupa_to_dir_btw_gudam_up_Denv"
+      },
+      "To_downstream_from_Lengupa_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "lengupa_Denv"
+      },
+
+      "Deliveries_Lago_de_tota_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "lago_de_tota_Dtot"
+      },
+      "Dfwu_Lago_de_tota_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lago_de_tota_Dfwu"
+      },
+      "Dfwr_Lago_de_tota_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lago_de_tota_Dfwr"
+      },
+      "Dliv_Lago_de_tota_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lago_de_tota_Dliv"
+      },
+      "Dirr_Lago_de_tota_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lago_de_tota_Dirr"
+      },
+      "Denv_Lago_de_tota_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "lago_de_tota_to_upia_Denv"
+      },
+      "To_downstream_from_Lago_de_tota_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "lago_de_tota_Denv"
+      },
+
+      "Deliveries_Upia_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "upia_Dtot"
+      },
+      "Dfwu_Upia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "upia_Dfwu"
+      },
+      "Dfwr_Upia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "upia_Dfwr"
+      },
+      "Dliv_Upia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "upia_Dliv"
+      },
+      "Dirr_Upia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "upia_Dirr"
+      },
+      "Denv_Upia_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "upia_to_dir_btw_gb_yu_Denv"
+      },
+      "To_downstream_from_Upia_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "upia_Denv"
+      },
+
+
+      "Deliveries_Dir_btw_gb_yu_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_gb_yu_Dtot"
+      },
+      "Dfwu_Dir_btw_gb_yu_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_gb_yu_Dfwu"
+      },
+      "Dfwr_Dir_btw_gb_yu_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_gb_yu_Dfwr"
+      },
+      "Dliv_Dir_btw_gb_yu_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_gb_yu_Dliv"
+      },
+      "Dirr_Dir_btw_gb_yu_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_gb_yu_Dirr"
+      },
+      "Denv_Dir_btw_gb_yu_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_gb_yu_to_junct_metica_yu_man_Denv"
+      },
+      "To_downstream_from_Dir_btw_gb_yu_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_gb_yu_Denv"
+      },
+
+
+      "Deliveries_Yucao_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "yucao_Dtot"
+      },
+      "Dfwu_Yucao_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "yucao_Dfwu"
+      },
+      "Dfwr_Yucao_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "yucao_Dfwr"
+      },
+      "Dliv_Yucao_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "yucao_Dliv"
+      },
+      "Dirr_Yucao_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "yucao_Dirr"
+      },
+      "Denv_Yucao_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "yucao_to_junct_metica_yu_man_Denv"
+      },
+      "To_downstream_from_Yucao_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "yucao_Denv"
+      },
+
+
+      "Deliveries_Manacacias_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "manacacias_Dtot"
+      },
+      "Dfwu_Manacacias_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "manacacias_Dfwu"
+      },
+      "Dfwr_Manacacias_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "manacacias_Dfwr"
+      },
+      "Dliv_Manacacias_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "manacacias_Dliv"
+      },
+      "Dirr_Manacacias_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "manacacias_Dirr"
+      },
+      "Denv_Manacacias_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "manacacias_to_junct_metica_yu_man_Denv"
+      },
+      "To_downstream_from_Manacacias_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "manacacias_Denv"
+      },
+
+
+      "Deliveries_Cumaral_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "cumaral_Dtot"
+      },
+      "Dfwu_Cumaral_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cumaral_Dfwu"
+      },
+      "Dfwr_Cumaral_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cumaral_Dfwr"
+      },
+      "Dliv_Cumaral_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cumaral_Dliv"
+      },
+      "Dirr_Cumaral_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cumaral_Dirr"
+      },
+      "Denv_Cumaral_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cumaral_to_manacacias_Denv"
+      },
+      "To_downstream_from_Cumaral_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "cumaral_Denv"
+      },
+
+
+      "Deliveries_Melua_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "melua_Dtot"
+      },
+      "Dfwu_Melua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "melua_Dfwu"
+      },
+      "Dfwr_Melua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "melua_Dfwr"
+      },
+      "Dliv_Melua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "melua_Dliv"
+      },
+      "Dirr_Melua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "melua_Dirr"
+      },
+      "Denv_Melua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "melua_to_manacacias_Denv"
+      },
+      "To_downstream_from_Melua_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "melua_Denv"
+      },
+
+
+      "Deliveries_Tua_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "tua_Dtot"
+      },
+      "Dfwu_Tua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "tua_Dfwu"
+      },
+      "Dfwr_Tua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "tua_Dfwr"
+      },
+      "Dliv_Tua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "tua_Dliv"
+      },
+      "Dirr_Tua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "tua_Dirr"
+      },
+      "Denv_Tua_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "tua_to_junct_meta_tua_cusiana_Denv"
+      },
+      "To_downstream_from_Tua_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "tua_Denv"
+      },
+
+
+      "Deliveries_Cusiana_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "cusiana_Dtot"
+      },
+      "Dfwu_Cusiana_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cusiana_Dfwu"
+      },
+      "Dfwr_Cusiana_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cusiana_Dfwr"
+      },
+      "Dliv_Cusiana_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cusiana_Dliv"
+      },
+      "Dirr_Cusiana_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cusiana_Dirr"
+      },
+      "Denv_Cusiana_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cusiana_to_manacacias_Denv"
+      },
+      "To_downstream_from_Cusiana_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "cusiana_Denv"
+      },
+
+
+      "Deliveries_Dir_btw_cu_cs_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_cu_cs_Dtot"
+      },
+      "Dfwu_Dir_btw_cu_cs_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_cs_Dfwu"
+      },
+      "Dfwr_Dir_btw_cu_cs_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_cs_Dfwr"
+      },
+      "Dliv_Dir_btw_cu_cs_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_cs_Dliv"
+      },
+      "Dirr_Dir_btw_cu_cs_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_cs_Dirr"
+      },
+      "Denv_Dir_btw_cu_cs_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_cs_to_dir_btw_cu_ca_Denv"
+      },
+      "To_downstream_from_Dir_btw_cu_cs_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_cu_cs_Denv"
+      },
+
+
+      "Deliveries_CravoSur_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "cravo_sur_Dtot"
+      },
+      "Dfwu_CravoSur_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cravo_sur_Dfwu"
+      },
+      "Dfwr_CravoSur_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cravo_sur_Dfwr"
+      },
+      "Dliv_CravoSur_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cravo_sur_Dliv"
+      },
+      "Dirr_CravoSur_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cravo_sur_Dirr"
+      },
+      "Denv_CravoSur_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "cravo_sur_to_dir_btw_cu_ca_Denv"
+      },
+      "To_downstream_from_CravoSur_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "cravo_sur_Denv"
+      },
+
+
+      "Deliveries_Guanapalo_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guanapalo_Dtot"
+      },
+      "Dfwu_Guanapalo_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guanapalo_Dfwu"
+      },
+      "Dfwr_Guanapalo_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guanapalo_Dfwr"
+      },
+      "Dliv_Guanapalo_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guanapalo_Dliv"
+      },
+      "Dirr_Guanapalo_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guanapalo_Dirr"
+      },
+      "Denv_Guanapalo_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "guanapalo_to_dir_btw_cu_ca_Denv"
+      },
+      "To_downstream_from_Guanapalo_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "guanapalo_Denv"
+      },
+
+
+      "Deliveries_Pauto_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "pauto_Dtot"
+      },
+      "Dfwu_Pauto_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "pauto_Dfwu"
+      },
+      "Dfwr_Pauto_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "pauto_Dfwr"
+      },
+      "Dliv_Pauto_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "pauto_Dliv"
+      },
+      "Dirr_Pauto_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "pauto_Dirr"
+      },
+      "Denv_Pauto_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "pauto_to_dir_btw_cu_ca_Denv"
+      },
+      "To_downstream_from_Pauto_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "pauto_Denv"
+      },
+
+
+      "Deliveries_Dir_btw_p_ca_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_p_ca_Dtot"
+      },
+      "Dfwu_Dir_btw_p_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_p_ca_Dfwu"
+      },
+      "Dfwr_Dir_btw_p_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_p_ca_Dfwr"
+      },
+      "Dliv_Dir_btw_p_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_p_ca_Dliv"
+      },
+      "Dirr_Dir_btw_p_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_p_ca_Dirr"
+      },
+      "Denv_Dir_btw_p_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_p_ca_to_junct_meta_casanare_Denv"
+      },
+      "To_downstream_from_Dir_btw_p_ca_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_p_ca_Denv"
+      },
+
+
+      "Deliveries_Dir_btw_cu_ca_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_cu_ca_Dtot"
+      },
+      "Dfwu_Dir_btw_cu_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_ca_Dfwu"
+      },
+      "Dfwr_Dir_btw_cu_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_ca_Dfwr"
+      },
+      "Dliv_Dir_btw_cu_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_ca_Dliv"
+      },
+      "Dirr_Dir_btw_cu_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_ca_Dirr"
+      },
+      "Denv_Dir_btw_cu_ca_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_cu_ca_to_junct_meta_casanare_Denv"
+      },
+      "To_downstream_from_Dir_btw_cu_ca_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_cu_ca_Denv"
+      },
+
+
+      "Deliveries_Casanare_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "casanare_Dtot"
+      },
+      "Dfwu_Casanare_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "casanare_Dfwu"
+      },
+      "Dfwr_Casanare_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "casanare_Dfwr"
+      },
+      "Dliv_Casanare_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "casanare_Dliv"
+      },
+      "Dirr_Casanare_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "casanare_Dirr"
+      },
+      "Denv_Casanare_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "casanare_to_junct_meta_casanare_Denv"
+      },
+      "To_downstream_from_Casanare_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "casanare_Denv"
+      },
+
+
+      "Deliveries_Dir_btw_ca_or_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_ca_or_Dtot"
+      },
+      "Dfwu_Dir_btw_ca_or_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_ca_or_Dfwu"
+      },
+      "Dfwr_Dir_btw_ca_or_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_ca_or_Dfwr"
+      },
+      "Dliv_Dir_btw_ca_or_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_ca_or_Dliv"
+      },
+      "Dirr_Dir_btw_ca_or_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_ca_or_Dirr"
+      },
+      "Denv_Dir_btw_ca_or_cmd": {
+        "type": "NumpyArrayParameterRecorder",
+        "parameter": "dir_btw_ca_or_to_outflow_Denv"
+      },
+      "To_downstream_from_Dir_btw_ca_or_cmd": {
+        "type": "NumpyArrayNodeRecorder",
+        "node": "dir_btw_ca_or_Denv"
+      }
+
+
+
+  }   
+      
+}
