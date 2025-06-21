@@ -18,7 +18,7 @@ class Freshwater_Demand(Parameter):
             - population
             - water use per capita
             - CI (consumption index)
-            - 1/loss term (i.e., the fraction of the water that is lost before reaching the consumer)
+            - 1/ (1-loss term) (i.e., the fraction of the water that is lost before reaching the consumer)
 
             The simulated demand is a piecewise linear function of the population because the 
             water use per capita increases at specific population thresholds.    

@@ -26,23 +26,6 @@ list_of_subbasins = [
     'Pauto', 'Dir_btw_p_ca', 'Dir_btw_cu_ca', 'Casanare', 'Dir_btw_ca_or']
 
 
-performance_metrics = ['AnnualDeficit_Dfw_mean_Mm3', 
-                       'AnnualDeficit_Dirr_mean_Mm3', 
-                       'AnnualDeficit_Dliv_mean_Mm3', 
-                       'AnnualDeficit_Denv_mean_Mm3',
-                       'AnnualDeficit_Dfw_max_Mm3', 
-                       'AnnualDeficit_Dirr_max_Mm3', 
-                       'AnnualDeficit_Dliv_max_Mm3', 
-                       'AnnualDeficit_Denv_max_Mm3',
-                       'AnnualDeficit_Dfw_q95_Mm3', 
-                       'AnnualDeficit_Dirr_q95_Mm3', 
-                       'AnnualDeficit_Dliv_q95_Mm3', 
-                       'AnnualDeficit_Denv_q95_Mm3',
-                       'AnnualDeficit_Dfw_q75_Mm3', 
-                       'AnnualDeficit_Dirr_q75_Mm3', 
-                       'AnnualDeficit_Dliv_q75_Mm3', 
-                       'AnnualDeficit_Denv_q75_Mm3']
-
 deficit_per_basin = pd.DataFrame(columns=('urban', 'rural', 'livestock', 'agriculture', 'envflow'),
     index=list_of_subbasins)
 

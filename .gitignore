@@ -26,6 +26,9 @@ resultados.zip
 /scripts/*.lp
 /scripts/*.mps
 /scripts/run_OWF_CST_unity*
+/scripts/Fit_ML_Prediction_Dam_Release_for_OWF.py
+/scripts/plot_meta_hydroclimatology.py
+/scripts/run_gr2m_Obs.py
 /scripts/logs/**
 
 # Input files
@@ -46,6 +49,14 @@ resultados.zip
 # Figures 
 /figures/*.png
 !/figures/OWF_readme_screenshot/*.png
+/figures/CRF/**
+/figures/CST_maps/**
+/figures/hydroclimatology/**
+/figures/OWF_timeseries_deliveries_deficit/**
+/figures/Performance_metrics/**
+/figures/check_gr2m_simobs/**
+/figures/check_gr2m_cst/**
+/figures/CDF/**
 
 # Shapefiles
 /data/shapefiles/**
@@ -70,6 +81,9 @@ unity-token.txt
 
 # Scripts
 /scripts/test_download_CMIP6_projections.py
+/scripts/check_gr2m_CST.py
+/scripts/OWF_CST_unity.py
+/scripts/preliminary_results_OWF_CST.py
 
 # Drafts of the report
 /report/**
